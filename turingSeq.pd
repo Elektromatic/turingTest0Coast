@@ -1,0 +1,70 @@
+#N canvas 535 121 727 348 10;
+#X obj 102 102 cnv 15 145 105 empty empty turingSeq_\$1 0 4 0 10 -229369
+-66577 0;
+#X obj 107 116 vradio 12 1 0 7 empty empty empty 0 -8 0 10 -262130
+-1 -1 3;
+#X obj 126 220 + 2;
+#X msg 70 220 0;
+#X obj 107 61 loadbang;
+#X text 120 115 2 bits;
+#X text 120 128 3 bits;
+#X text 120 140 4 bits;
+#X text 120 152 5 bits;
+#X text 120 164 6 bits;
+#X text 120 176 7 bits;
+#X text 120 187 8 bits;
+#X obj 168 117 vsl 12 80 1 64 0 0 empty empty empty 0 -9 0 10 -262130
+-1 -1 2990 1;
+#X obj 168 61 loadbang;
+#X obj 184 220 i 0;
+#X obj 186 144 bng 15 250 50 0 empty empty set 17 7 0 10 -262130 -1
+-1;
+#X obj 70 238 s \$1-ctr;
+#X obj 126 238 s \$1-bits;
+#X obj 188 238 s \$1-change;
+#X obj 261 238 s \$1-change;
+#X msg 261 219 1e+009;
+#X obj 186 187 nbx 2 12 1 1e+037 0 0 empty empty empty 0 -8 0 10 -204786
+-1 -1 24 256;
+#X text 182 172 flip every;
+#X text 217 186 bits;
+#X text 355 128 This abstraction controls # of bits to shift;
+#X text 343 140 The vert slider controls how often to flip lsb;
+#X text 313 164 Changing the vert slider starts bits flipping again
+;
+#X text 303 54 This is a pseudorandom looping sequencer. It generates
+strings of pseudorandom numbers that can be locked into looping sequences.
+These sequences can be allowed to slip \, changing gradually over time.
+;
+#X text 343 152 "Set" effectively stops lsb bits from flipping;
+#X text 181 113 1 in 64;
+#X obj 107 79 f 3;
+#X obj 168 79 f 24;
+#N canvas 798 113 632 468 copyrightInfo 0;
+#X text 74 306 j.raski@gmail.com;
+#X text 43 19 This program creates generative music on an electronic
+synthesiser. Copyright (C) 2019 Jerry Z. Raski This program is free
+software: you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software
+Foundation \, either version 3 of the License \, or (at your option)
+any later version. This program is distributed in the hope that it
+will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details. You should have received
+a copy of the GNU General Public License along with this program. If
+not \, see <https://www.gnu.org/licenses/>.;
+#X restore 18 315 pd copyrightInfo;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 17 0;
+#X connect 3 0 16 0;
+#X connect 4 0 30 0;
+#X connect 12 0 14 0;
+#X connect 13 0 31 0;
+#X connect 14 0 18 0;
+#X connect 14 0 21 0;
+#X connect 15 0 20 0;
+#X connect 20 0 19 0;
+#X connect 30 0 1 0;
+#X connect 31 0 12 0;
+#X coords 0 -1 1 1 150 110 1 100 100;

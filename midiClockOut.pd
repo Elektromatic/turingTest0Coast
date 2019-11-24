@@ -1,0 +1,97 @@
+#N canvas 300 44 577 537 12;
+#X obj 308 83 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 308 168 midiout;
+#X obj 351 122 select 0 1;
+#X msg 351 142 252;
+#X msg 384 142 250;
+#X msg 308 142 248;
+#X obj 308 122 metro;
+#X obj 357 63 r bpm;
+#X obj 272 63 r go;
+#X obj 308 63 r stop;
+#X obj 461 298 outlet;
+#X obj 295 189 f 0;
+#X obj 295 210 + 1;
+#X obj 329 232 f 0;
+#X obj 329 253 + 1;
+#X obj 329 210 sel 0;
+#X obj 329 189 % 6;
+#X obj 363 253 sel 0;
+#X obj 354 299 outlet;
+#X obj 354 280 t b;
+#X obj 363 232 % 16;
+#X text 280 300 1/16 notes;
+#X obj 195 190 f 0;
+#X obj 195 211 + 1;
+#X obj 229 210 sel 0;
+#X obj 229 299 outlet;
+#X obj 229 190 % 3;
+#X obj 229 232 f 0;
+#X obj 229 253 + 1;
+#X obj 263 232 % 32;
+#X text 155 300 1/32 notes;
+#X obj 229 276 t b;
+#X obj 109 299 outlet;
+#X text 35 300 1/96 notes;
+#X obj 73 194 loadbang;
+#X text 216 26 Send a midi clock out from pd;
+#X floatatom 357 102 5 0 0 0 - - -, f 5;
+#X obj 357 83 expr (60000/$f1/24);
+#X text 436 299 bpm;
+#X text 361 168 the clock goes out here;
+#X text 185 317 clocks for the patch;
+#X msg 73 214 \; bpm 115 \;;
+#N canvas 798 113 632 468 copyrightInfo 0;
+#X text 74 306 j.raski@gmail.com;
+#X text 43 19 This program creates generative music on an electronic
+synthesiser. Copyright (C) 2019 Jerry Z. Raski This program is free
+software: you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software
+Foundation \, either version 3 of the License \, or (at your option)
+any later version. This program is distributed in the hope that it
+will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details. You should have received
+a copy of the GNU General Public License along with this program. If
+not \, see <https://www.gnu.org/licenses/>.;
+#X restore 19 359 pd copyrightInfo;
+#X connect 0 0 2 0;
+#X connect 0 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 6 0 11 0;
+#X connect 6 0 22 0;
+#X connect 6 0 32 0;
+#X connect 7 0 37 0;
+#X connect 7 0 10 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 11 0 12 0;
+#X connect 12 0 16 0;
+#X connect 13 0 14 0;
+#X connect 13 0 19 0;
+#X connect 14 0 20 0;
+#X connect 15 0 13 0;
+#X connect 16 0 11 1;
+#X connect 16 0 15 0;
+#X connect 19 0 18 0;
+#X connect 20 0 13 1;
+#X connect 20 0 17 0;
+#X connect 22 0 23 0;
+#X connect 23 0 26 0;
+#X connect 24 0 27 0;
+#X connect 26 0 22 1;
+#X connect 26 0 24 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 28 0 31 0;
+#X connect 29 0 27 1;
+#X connect 31 0 25 0;
+#X connect 34 0 41 0;
+#X connect 36 0 6 1;
+#X connect 37 0 36 0;

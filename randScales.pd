@@ -1,0 +1,82 @@
+#N canvas 124 20 740 524 12;
+#X floatatom 130 133 5 0 0 1 Scale_tones - -, f 5;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-pitches 11 float 3;
+#A 0 3 5 7 10 12 15 17 19 22 24 0;
+#X coords 0 55 11 0 100 70 1 0 0;
+#X restore 352 30 graph;
+#X obj 105 203 loadbang;
+#X obj 130 52 inlet;
+#X obj 130 152 outlet;
+#X obj 405 310 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 106 309 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 105 224 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 406 228 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 456 51 Doesn't always display correctly;
+#X text 455 63 However \, plays correctly;
+#X obj 35 392 loadbang;
+#X obj 35 411 f \$0;
+#X floatatom 35 430 5 0 0 0 - - -, f 5;
+#X obj 406 247 f \$0;
+#X obj 405 329 f \$0;
+#X obj 106 328 f \$0;
+#X obj 105 243 f \$0;
+#X obj 355 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 355 144 f \$0;
+#X msg 355 164 \; \$1-pitches const 0;
+#X obj 190 51 loadbang;
+#X obj 190 74 f \$0;
+#X msg 190 93 symbol \$1-pitches;
+#X text 391 143 clear array;
+#N canvas 798 113 632 468 copyrightInfo 0;
+#X text 74 306 j.raski@gmail.com;
+#X text 43 19 This program creates generative music on an Elektron
+Digitakt. Copyright (C) 2019 Jerry Z. Raski This program is free software:
+you can redistribute it and/or modify it under the terms of the GNU
+General Public License as published by the Free Software Foundation
+\, either version 3 of the License \, or (at your option) any later
+version. This program is distributed in the hope that it will be useful
+\, but WITHOUT ANY WARRANTY \; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+Public License for more details. You should have received a copy of
+the GNU General Public License along with this program. If not \, see
+<https://www.gnu.org/licenses/>.;
+#X restore 33 456 pd copyrightInfo;
+#X obj 130 113 array get;
+#X msg 160 74 1;
+#X floatatom 89 134 5 0 0 0 Position - -, f 5;
+#X msg 106 348 \; \$1-pitches 0 2 3 5 7 8 10 12 14 15 17 \;;
+#X msg 406 267 \; \$1-pitches 0 2 4 7 9 12 14 16 19 21 24 \;;
+#X msg 405 348 \; \$1-pitches 0 2 4 5 7 9 11 12 14 16 17 \;;
+#X msg 105 263 \; \$1-pitches 0 3 5 7 10 12 15 17 19 22 24 \;;
+#X text 180 245 Minor pentatonic;
+#X text 186 331 Minor scale;
+#X text 473 250 Major pentatonic;
+#X text 487 330 Major scale;
+#X connect 0 0 4 0;
+#X connect 2 0 7 0;
+#X connect 3 0 26 0;
+#X connect 3 0 28 0;
+#X connect 5 0 15 0;
+#X connect 6 0 16 0;
+#X connect 7 0 17 0;
+#X connect 8 0 14 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 30 0;
+#X connect 15 0 31 0;
+#X connect 16 0 29 0;
+#X connect 17 0 32 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 21 0 22 0;
+#X connect 21 0 27 0;
+#X connect 22 0 23 0;
+#X connect 23 0 26 2;
+#X connect 26 0 0 0;
+#X connect 27 0 26 1;
